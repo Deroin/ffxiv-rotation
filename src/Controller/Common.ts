@@ -1,24 +1,24 @@
 export const enum LogCategory {
-	Action = "Action",
-	Event = "Event",
+    Action = "Action",
+    Event = "Event",
 }
 
 export const enum ReplayMode {
-	Exact = "Exact",
-	SkillSequence = "SkillSequence",
-	Edited = "Edited"
+    Exact = "Exact",
+    SkillSequence = "SkillSequence",
+    Edited = "Edited"
 }
 
 export const enum FileType {
-	Record = "Record",
-	SkillSequencePresets = "SkillSequencePresets",
-	MarkerTrackIndividual = "MarkerTrackIndividual",
-	MarkerTracksCombined = "MarkerTracksCombined"
+    Record = "Record",
+    SkillSequencePresets = "SkillSequencePresets",
+    MarkerTrackIndividual = "MarkerTrackIndividual",
+    MarkerTracksCombined = "MarkerTracksCombined"
 }
 
 
 export const enum TickMode {
-	RealTime = 0,
-	RealTimeAutoPause = 1,
-	Manual = 2
+    RealTime = 0,
+    RealTimeAutoPause = 1,
+    Manual = 2
 }

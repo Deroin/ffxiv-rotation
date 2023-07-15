@@ -1,7 +1,6 @@
 import {FileType} from "./Common";
 import {ActionNode, Line} from "./Record";
 import {asyncFetch} from "../Components/Common";
-// @ts-ignore
 import {updateSkillSequencePresetsView} from "../Components/SkillSequencePresets";
 
 type Fixme = any;

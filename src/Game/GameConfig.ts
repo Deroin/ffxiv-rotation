@@ -1,4 +1,4 @@
-import {Debug, SkillName, ProcMode} from "./Common";
+import {Debug, ProcMode, SkillName} from "./Common";
 import {ResourceOverride} from "./Resources";
 
 export class GameConfig {
@@ -22,7 +22,7 @@ export class GameConfig {
         timeTillFirstManaTick: number,
         procMode: ProcMode,
         extendedBuffTimes: boolean,
-        initialResourceOverrides: any[]
+        initialResourceOverrides: ResourceOverride[]
     }) {
         if (props) {
             this.spellSpeed = props.spellSpeed;
@@ -34,16 +34,14 @@ export class GameConfig {
             this.procMode = props.procMode;
             this.extendedBuffTimes = props.extendedBuffTimes;
             if (props.initialResourceOverrides) {
-                this.initialResourceOverrides = props.initialResourceOverrides.map(obj=>{
-                    return new ResourceOverride(obj);
-                });
+                this.initialResourceOverrides = props.initialResourceOverrides;
             }
         }
     }
 
     equals(other : GameConfig) {
         let sortFn = (a: ResourceOverride, b: ResourceOverride)=>{
-            return a.props.type < b.props.type ? -1 : 1;
+            return a.type < b.type ? -1 : 1;
         };
         let thisSortedOverrides = this.initialResourceOverrides.sort(sortFn);
         let otherSortedOverrides = other.initialResourceOverrides.sort(sortFn);
